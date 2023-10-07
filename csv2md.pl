@@ -21,7 +21,7 @@ sub csv2md {
     while (my $row = $csv->getline($in_fh)) {
         print $out_fh "| ", join(" | ", @$row), " |\n";
 
-        # Stampa la linea di separazione solo dopo l'intestazione
+        # Print the separator line only after the header
         if ($. == 1) {
             my @seps = map { '-' x length($_) } @$row;
             print $out_fh "|", join("|", @seps), "|\n";
